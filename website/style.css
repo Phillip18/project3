@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#zip {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#generate {
+    margin-top: 50px;
+}
