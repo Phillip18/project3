@@ -22,7 +22,7 @@ const retrieveData = async () => {
 }
 
 const a = "You are a cretin";
-const getDataFromServer = async (url = 'f', data = a) => {
+const getDataFromServer = async (url = '', data = a) => {
   const response = await fetch(url, {method: 'GET',});
     console.log('response: ' + response);
 };
