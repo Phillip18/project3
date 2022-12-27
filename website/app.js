@@ -6,7 +6,7 @@ const url = baseUrl + apiKey;
 const port = 3000;
 
 const getData = async () => {
-  const request = await fetch(url);
+  const request = await fetch(url, {method: 'GET',});
   try {
     // Transform into JSON
     const allData = await request.json()
