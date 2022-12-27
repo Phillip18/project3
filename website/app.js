@@ -1,6 +1,6 @@
 // Personal API Key for OpenWeatherMap API
-const apiKey = '276e18283568dbad373c7c990407a6bb&units=imperial';
-const baseUrl = 'https://openweathermap.com;'
+const apiKey = '8e204443b8f65beaafb4737d4e9f3dc0&units=imperial';
+const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
 const zip = '11204';
 const heroku = 'https://cors-anywhere.herokuapp.com/'
 const url = heroku + baseUrl + zip + apiKey;
