@@ -1,6 +1,8 @@
 // Personal API Key for OpenWeatherMap API
 const apiKey = '276e18283568dbad373c7c990407a6bb&units=imperial';
 const baseUrl = 'https://openweathermap.com;'
+//const heroku = 'https://cors-anywhere.herokuapp.com'
+const port = 3000;
 
 const retrieveData = async () => {
   const request = await fetch('/all');
@@ -21,13 +23,16 @@ const retrieveData = async () => {
   }
 }
 
-const a = "You are a cretin";
-const getDataFromServer = async (url = '', data = a) => {
+//const getDataFromServer = async (url = `http://localhost:${port}`, data = a) => {
+const getDataFromServer = async (url = `http://localhost:${port}`) => {
   const response = await fetch(url, {method: 'GET',});
-    console.log('response: ' + response);
+  console.log('done');  
+  console.log('response: ' + response.statusText);
 };
-getDataFromServer();
 
 //document.getElementById('generate').addEventListener('click', () => {
 //  getData();
 //});
+
+//getDataFromServer();
+retrieveData()
