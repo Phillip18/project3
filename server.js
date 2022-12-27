@@ -10,14 +10,14 @@ app.use(bodyParser.json());
 const cors = require('cors');
 const { send } = require('express/lib/response');
 app.use(cors());
-/*app.get('/products/:id', function (req, res, next) {
+app.get('/products/:id', function (req, res, next) {
     res.json({msg: 'This is CORS-enabled for all origins!'})
-  })*/
+  })
   /*app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'null');
     next();
   });*/ 
-
+ 
 app.use(express.static('website'));
 
 const port = 3000;

@@ -2,10 +2,11 @@
 const apiKey = '276e18283568dbad373c7c990407a6bb&units=imperial';
 const baseUrl = 'https://openweathermap.com;'
 //const heroku = 'https://cors-anywhere.herokuapp.com'
+const url = baseUrl + apiKey;
 const port = 3000;
 
 const getData = async () => {
-  const request = await fetch('/all');
+  const request = await fetch(url);
   try {
     // Transform into JSON
     const allData = await request.json()
@@ -35,4 +36,4 @@ const getDataFromServer = async (url = `http://localhost:${port}`) => {
 //  getData();
 //});
 
-getData()
+getData();
