@@ -2,11 +2,14 @@
 const apiKey = '8e204443b8f65beaafb4737d4e9f3dc0&units=imperial';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
 const zip = '11204';
+const letters = ',us&appid='
 const heroku = 'https://cors-anywhere.herokuapp.com/'
-const url = heroku + baseUrl + zip + apiKey;
+const url = heroku + baseUrl + zip + letters + apiKey;
 const port = 3000;
 
 const getData = async () => {
+  console.log('https://api.openweathermap.org/data/2.5/weather?zip=94040,us&appid={API key}')
+  console.log(url)
   const request = await fetch(url, {method: 'GET',});
   try {
     // Transform into JSON
