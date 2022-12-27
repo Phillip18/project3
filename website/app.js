@@ -1,8 +1,9 @@
 // Personal API Key for OpenWeatherMap API
 const apiKey = '276e18283568dbad373c7c990407a6bb&units=imperial';
 const baseUrl = 'https://openweathermap.com;'
-//const heroku = 'https://cors-anywhere.herokuapp.com'
-const url = baseUrl + apiKey;
+const zip = '11204';
+const heroku = 'https://cors-anywhere.herokuapp.com/'
+const url = heroku + baseUrl + zip + apiKey;
 const port = 3000;
 
 const getData = async () => {
