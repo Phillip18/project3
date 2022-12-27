@@ -26,16 +26,17 @@ app.listen(port, function() {
     console.log(`Server is running on port ${port}.`);
 });
 
-const projectData = {};
-const a = "You are smart";
+let projectData = {};
+//projectData = {...projectData, 'stupid': 'idiot'}
 
 /*app.get('/', (request, response)=>{
     console.log('sending...');
     response.send('working on it');
     response.send(a);
 });*/
-app.get('/', function (req, res) {
-    res.send({fool: stupid});
+app.get('/', function (request, response) {
+    res.send({'Hurray!': 'happiness'});
+    response.send(projectData);
   })
 app.post('post', (request, response)=>{
     console.log(request);

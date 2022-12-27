@@ -4,7 +4,7 @@ const baseUrl = 'https://openweathermap.com;'
 //const heroku = 'https://cors-anywhere.herokuapp.com'
 const port = 3000;
 
-const retrieveData = async () => {
+const getData = async () => {
   const request = await fetch('/all');
   try {
     // Transform into JSON
@@ -26,13 +26,13 @@ const retrieveData = async () => {
 //const getDataFromServer = async (url = `http://localhost:${port}`, data = a) => {
 const getDataFromServer = async (url = `http://localhost:${port}`) => {
   const response = await fetch(url, {method: 'GET',});
+  const data = await response.json();
   console.log('done');  
-  console.log('response: ' + response.statusText);
+  console.log(data);
 };
 
 //document.getElementById('generate').addEventListener('click', () => {
 //  getData();
 //});
 
-//getDataFromServer();
-retrieveData()
+getData()
