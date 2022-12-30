@@ -1,5 +1,5 @@
 // Personal API Key for OpenWeatherMap API
-const apiKey = '8e204443b8f65beaafb4737d4e9f3dc0&units=imperial';
+const apiKey = '';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
 const zip = '11204';
 const letters = ',us&appid='
@@ -16,7 +16,7 @@ const getData = async () => {
     document.getElementById('temp').innerHTML = Math.round(allData.temp) + 'degrees';
     document.getElementById('content').innerHTML = allData.feel;
     document.getElementById('date').innerHTML = allData.date;
-    return allData;
+    if (allData == undefined) { return { 'idiot': 'you' } } else return allData;
   }
   catch (error) {
     console.log('error', error);
@@ -26,34 +26,38 @@ const getData = async () => {
 }
 
 const postDataToServer = async (url = '', data) => {
-const response = await fetch(url, {
+  const response = await fetch(url, {
     method: 'POST',
+    mode: 'no-cors',
     credentials: 'same-origin',
-    headers: { 'content-type': 'application.json', },
+    headers: { 'content-type': 'application.json' },
     body: JSON.stringify("data")
   });
   try {
     console.log(response.json());
   }
-  catch(error) {
+  catch (error) {
     console.log(`Error posting data to the server:  ${error}`);
   }
 }
 
 const getDataFromServer = async (url = `http://localhost:${port}`) => {
-console.log("You are a tripple cretin")
-const response = await fetch(url, { method: 'GET', });
-  const data = await response.json();
+  const response = await fetch(url, {
+    method: 'GET',
+    method: 'no-cors',
+  });
+  try {
+    const data = await response.json();
+    console.log('success')
+    console.log(data)
+  }
+  catch (error) {
+    console.log('This is the error with getting data from the server:  ' + error);
+  }
   return data;
-};
+}
 
 //document.getElementById('generate').addEventListener('click', () => {
-getData().then(function(allData) {
-  postDataToServer(allData);
+getData().then(function (allData) {
+  postDataToServer({ 'cretin': 'you' })
 });
-  //postDataToServer(allData)).then(display())
-//});
-
-function display() {
-  console.log("You are a cretin")
-}
