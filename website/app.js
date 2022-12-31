@@ -35,7 +35,7 @@ const postDataToServer = async (url, data) => {
   });
   try {
     console.log('response: ' + response.body)
-    const a = JSON.parse(response);
+    response.json();
     console.log(a);
   }
   catch (error) {
