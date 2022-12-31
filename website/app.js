@@ -65,5 +65,6 @@ const getDataFromServer = async (url = `http://localhost:${port}`) => {
 //getData().then(function (allData) {
   //postDataToServer('', { 'data': 'data to be posted to server' })
 //});
-getDataFromServer()
+postDataToServer('', { 'data': 'data to be posted to server' })
+//getDataFromServer()
 
