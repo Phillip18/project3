@@ -43,7 +43,7 @@ const postDataToServer = async (url, data) => {
   }
 }
 
-const getDataFromServer = async (url = `http://localhost:${port}`) => {
+const getDataFromServer = async (url) => {
   const response = await fetch(url, {
     method: 'GET',
     mode: 'no-cors',
@@ -66,5 +66,5 @@ const getDataFromServer = async (url = `http://localhost:${port}`) => {
   //postDataToServer('', { 'data': 'data to be posted to server' })
 //});
 postDataToServer('', { 'data': 'data to be posted to server' })
-//getDataFromServer()
+//getDataFromServer('')
 
