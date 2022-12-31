@@ -15,13 +15,15 @@ app.listen(port, function() {
 });
 
 let projectData = {};
-projectData = {...projectData, 'stupid': 'idiot'}
+projectData = {...projectData, 'apple': 'orange'}
 
 app.get('/', function (request, response) {
     response.send(projectData);
   })
-app.post('/add', (request, response)=>{
+app.post('', (request, response)=>{
+    console.log('in the post route')
     console.log('REQUEST:')
     console.log(request);
-    response.send('post received')
+    console.log('projectData: ' + projectData)
+    response.send({"post": "received"})
 })

@@ -16,7 +16,7 @@ const getData = async () => {
     document.getElementById('temp').innerHTML = Math.round(allData.temp) + 'degrees';
     document.getElementById('content').innerHTML = allData.feel;
     document.getElementById('date').innerHTML = allData.date;
-    if (allData == undefined) { return { 'idiot': 'you' } } else return allData;
+    return allData;
   }
   catch (error) {
     console.log('error', error);
@@ -31,10 +31,12 @@ const postDataToServer = async (url, data) => {
     mode: 'no-cors',
     credentials: 'same-origin',
     headers: { 'content-type': 'application.json' },
-    body: JSON.stringify("data")
+    body: JSON.stringify({'data': 'data to be immediately posted to server'})
   });
   try {
-    console.log(response.json());
+    console.log('response: ' + response.body)
+    const a = JSON.parse(response);
+    console.log(a);
   }
   catch (error) {
     console.log(`Error posting data to the server:  ${error}`);
@@ -44,20 +46,24 @@ const postDataToServer = async (url, data) => {
 const getDataFromServer = async (url = `http://localhost:${port}`) => {
   const response = await fetch(url, {
     method: 'GET',
-    method: 'no-cors',
+    mode: 'no-cors',
   });
   try {
     const data = await response.json();
-    console.log('success')
+    //console.log(response)
     console.log(data)
+    console.log('success')
+    return data;
   }
   catch (error) {
+    console.log(response)
     console.log('This is the error with getting data from the server:  ' + error);
   }
-  return data;
 }
 
 //document.getElementById('generate').addEventListener('click', () => {
-getData().then(function (allData) {
-  postDataToServer('/add', { 'cretin': 'you' })
-});
+//getData().then(function (allData) {
+  //postDataToServer('', { 'data': 'data to be posted to server' })
+//});
+getDataFromServer()
+
