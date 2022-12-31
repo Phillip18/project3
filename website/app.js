@@ -1,5 +1,5 @@
 // Personal API Key for OpenWeatherMap API
-const apiKey = '';
+const apiKey = '0f51454f9b3a3421ea7583306d768481';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
 const zip = '11204';
 const letters = ',us&appid='
@@ -25,7 +25,7 @@ const getData = async () => {
   }
 }
 
-const postDataToServer = async (url = '', data) => {
+const postDataToServer = async (url, data) => {
   const response = await fetch(url, {
     method: 'POST',
     mode: 'no-cors',
@@ -59,5 +59,5 @@ const getDataFromServer = async (url = `http://localhost:${port}`) => {
 
 //document.getElementById('generate').addEventListener('click', () => {
 getData().then(function (allData) {
-  postDataToServer({ 'cretin': 'you' })
+  postDataToServer('/add', { 'cretin': 'you' })
 });

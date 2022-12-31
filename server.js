@@ -20,7 +20,7 @@ projectData = {...projectData, 'stupid': 'idiot'}
 app.get('/', function (request, response) {
     response.send(projectData);
   })
-app.post('', (request, response)=>{
+app.post('/add', (request, response)=>{
     console.log('REQUEST:')
     console.log(request);
     response.send('post received')
