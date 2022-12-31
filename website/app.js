@@ -1,5 +1,5 @@
 // Personal API Key for OpenWeatherMap API
-const apiKey = '0f51454f9b3a3421ea7583306d768481';
+/*const apiKey = 'b3d763404d8794a5874f13c2eb684722';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
 const zip = '11204';
 const letters = ',us&appid='
@@ -23,7 +23,7 @@ const getData = async () => {
     // appropriately handle the error
     document.getElementById('content').innerHTML = 'Error: couldn\'t get data from the server.';
   }
-}
+}*/
 
 const postDataToServer = async (url, data) => {
   const response = await fetch(url, {
@@ -34,16 +34,14 @@ const postDataToServer = async (url, data) => {
     body: JSON.stringify({'data': 'data to be immediately posted to server'})
   });
   try {
-    console.log('response: ' + response.body)
-    response.json();
-    console.log(a);
+    console.log('response: ' + response.ok)
   }
   catch (error) {
     console.log(`Error posting data to the server:  ${error}`);
   }
 }
 
-const getDataFromServer = async (url) => {
+/*const getDataFromServer = async (url) => {
   const response = await fetch(url, {
     method: 'GET',
     mode: 'no-cors',
@@ -59,12 +57,12 @@ const getDataFromServer = async (url) => {
     console.log(response)
     console.log('This is the error with getting data from the server:  ' + error);
   }
-}
+}*/
 
 //document.getElementById('generate').addEventListener('click', () => {
 //getData().then(function (allData) {
   //postDataToServer('', { 'data': 'data to be posted to server' })
 //});
-postDataToServer('', { 'data': 'data to be posted to server' })
+postDataToServer('http://localhost:3000', { 'data': 'data to be posted to server' })
 //getDataFromServer('')
 
