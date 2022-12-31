@@ -18,9 +18,13 @@ projectData = {...projectData, 'apple': 'orange'}
 app.get('/', function (request, response) {
     response.send(projectData);
   })*/
-app.post('', (request, response)=>{
+app.post('/', (request, response)=>{
     //console.log('REQUEST:' + request)
     //console.log('projectData: ' + projectData)
-    console.log(response.ok)
-    response.send()//({"post": "received"})
+    console.log('url: ' + request.url)
+    console.log('headers: ' + request.headers)
+    console.log('medhot: ' + request.method)
+    console.log('body: ' + request.body)
+    response.send('information sent successfully')//({"post": "received"})
+    console.log('response: ' + response)
 })
