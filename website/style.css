@@ -10,5 +10,9 @@ body {
 }
 
 #generate {
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+#entryHolder {
+    margin-top: 30px;
 }
